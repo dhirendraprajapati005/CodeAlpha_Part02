@@ -7,28 +7,29 @@
 
 body {
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #6dd5ed, #2193b0);
-  display: flex;
-  justify-content: center;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  color: #fff;
+  text-align: center;
   padding: 20px;
   min-height: 100vh;
 }
 
 /* Container */
 .container {
-  background: white;
+  background: rgba(0, 0, 0, 0.4);
   padding: 20px;
-  border-radius: 10px;
-  width: 100%;
+  border-radius: 15px;
+  display: inline-block;
   max-width: 500px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  animation: fadeIn 0.5s ease-in-out;
+  width: 95%;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
   text-align: center;
   margin-bottom: 20px;
-  color: #333;
+  color: #fff;
 }
 
 /* Form */
@@ -50,7 +51,7 @@ input[type="date"] {
 }
 
 input:focus, select:focus {
-  border-color: #2193b0;
+  border-color: #00c6ff;
   outline: none;
 }
 
@@ -76,15 +77,16 @@ ul {
 
 li {
   background: #f8f9fa;
-  padding: 10px;
+  color: #222;
+  padding: 12px;
   margin-bottom: 10px;
-  border-radius: 5px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   animation: slideIn 0.4s ease;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 /* Fade-out delete */
@@ -128,11 +130,11 @@ li.completed span.task-text {
 
 /* Category tags */
 .category {
-  padding: 2px 6px;
+  padding: 3px 8px;
   border-radius: 4px;
   font-size: 12px;
   font-weight: bold;
-  color: white;
+  color: rgb(54, 134, 196);
 }
 
 .category.work { background: #007bff; }
@@ -176,18 +178,17 @@ li.completed span.task-text {
 }
 
 /* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
-}
-
 @keyframes slideIn {
   from { transform: translateX(-20px); opacity: 0; }
   to { transform: translateX(0); opacity: 1; }
 }
 
-/* Responsive Layout Fix */
+/* Responsive Layout */
 @media (max-width: 500px) {
+  .container {
+    padding: 15px;
+  }
+
   li {
     flex-direction: column;
     align-items: flex-start;
