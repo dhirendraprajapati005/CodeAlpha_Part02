@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>📝 To-Do List</h1>
+
+    <!-- Input Form -->
+    <form id="taskForm">
+      <input type="text" id="taskInput" placeholder="Add a new task..." required />
+      <select id="taskCategory" required>
+        <option value="">Category</option>
+        <option value="Work">Work</option>
+        <option value="Personal">Personal</option>
+        <option value="Urgent">Urgent</option>
+      </select>
+      <input type="date" id="taskDate" required />
+      <button type="submit">Add</button>
+    </form>
+
+    <!-- Task List -->
+    <ul id="taskList"></ul>
+  </div>
+  <footer><p>&copy; 2025 www.devmosaic.in</p></footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
